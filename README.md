@@ -1,6 +1,6 @@
 # okashoko website
 
-岡翔子の個人サイト。ハブ用途の静的サイトで、Astro 5 + Tailwind 4 + GitHub Pages で構築。
+0xshookaの個人サイト。ハブ用途の静的サイトで、Astro 5 + Tailwind 4 + GitHub Pages で構築。
 
 ## 設計方針
 
