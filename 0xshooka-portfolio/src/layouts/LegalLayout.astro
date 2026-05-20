@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+    lastUpdated?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <article class="container-prose py-16 md:py-24">
+    <header class="mb-12 pb-8 border-b border-[color:var(--color-border)]">
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
+        {frontmatter.title}
+      </h1>
+      {frontmatter.lastUpdated && (
+        <p class="mt-4 text-sm text-[color:var(--color-ink-subtle)]">
+          {t('legal.lastUpdated')}: {frontmatter.lastUpdated}
+        </p>
+      )}
+    </header>
+
+    <div class="prose-content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

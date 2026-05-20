@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+const t = useTranslations('en');
+---
+
+<BaseLayout title={`${t('books.title')} - Shoko Oka`}>
+  <section class="container-wide pt-24 md:pt-32 pb-20">
+    <div class="mb-16">
+      <p class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-4 flex items-center gap-2">
+        <span class="glow-dot"></span>
+        {t('books.title')}
+      </p>
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+        {t('books.heading')}
+      </h1>
+      <p class="text-lg text-[color:var(--color-ink-muted)] max-w-2xl leading-relaxed">
+        {t('books.description')}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card flex flex-col justify-center items-center py-16 text-center">
+        <div class="text-4xl mb-4 opacity-20">📖</div>
+        <p class="text-[color:var(--color-ink-subtle)] text-sm">
+          Coming soon — details will appear here once published.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

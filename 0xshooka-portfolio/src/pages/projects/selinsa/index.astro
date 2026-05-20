@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+const t = useTranslations('ja');
+
+const features = [
+  t('projects.selinsa.features.1'),
+  t('projects.selinsa.features.2'),
+  t('projects.selinsa.features.3'),
+  t('projects.selinsa.features.4'),
+];
+---
+
+<BaseLayout title="selinsa - 岡翔子">
+  <section class="container-wide pt-24 md:pt-32 pb-20">
+    {/* ヘッダー */}
+    <div class="mb-16">
+      <a href="/projects/" class="text-sm text-[color:var(--color-ink-subtle)] hover:text-[color:var(--color-accent)] transition-colors mb-6 inline-block">
+        ← {t('projects.title')}
+      </a>
+      <div class="flex items-center gap-4 mb-4">
+        <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">
+          selinsa
+        </h1>
+        <span class="tag">{t('projects.status.active')}</span>
+      </div>
+      <p class="text-sm uppercase tracking-wider text-[color:var(--color-accent)] mb-6">
+        {t('projects.selinsa.tagline')}
+      </p>
+      <p class="text-lg text-[color:var(--color-ink-muted)] max-w-2xl leading-relaxed">
+        {t('projects.selinsa.detail')}
+      </p>
+    </div>
+
+    <hr class="divider mb-12" />
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {/* 機能一覧 */}
+      <div class="card">
+        <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-6 flex items-center gap-2">
+          <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
+          {t('projects.selinsa.features.title')}
+        </h2>
+        <ul class="space-y-3">
+          {features.map((item) => (
+            <li class="flex items-start gap-3 text-[color:var(--color-ink-muted)]">
+              <span class="glow-dot mt-2 shrink-0"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* メタ情報 */}
+      <div class="card">
+        <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-6 flex items-center gap-2">
+          <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
+          {t('projects.platform')}
+        </h2>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="tag">iOS</span>
+          <span class="tag">Android</span>
+        </div>
+
+        <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-4 flex items-center gap-2 mt-8">
+          <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
+          {t('projects.status')}
+        </h2>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[color:var(--neon-cyan)] shadow-[0_0_8px_var(--color-glow-strong)]"></span>
+          <span class="text-[color:var(--color-ink-muted)]">{t('projects.status.active')}</span>
+        </div>
+
+        <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-4 flex items-center gap-2 mt-8">
+          <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
+          {t('legal.privacy')}
+        </h2>
+        <a href="/legal/selinsa/privacy/" class="tag">
+          {t('legal.privacy')}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

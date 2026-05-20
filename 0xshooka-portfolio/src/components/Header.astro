@@ -1,0 +1,168 @@
+---
+import {
+  getLangFromUrl,
+  useTranslations,
+  getAlternateLangUrl,
+} from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const alternateUrl = getAlternateLangUrl(Astro.url, lang);
+
+const homeUrl = lang === 'ja' ? '/' : '/en/';
+const aboutUrl = lang === 'ja' ? '/about/' : '/en/about/';
+const booksUrl = lang === 'ja' ? '/books/' : '/en/books/';
+const projectsUrl = lang === 'ja' ? '/projects/' : '/en/projects/';
+---
+
+<header class="sticky top-0 z-50 border-b border-[color:var(--color-border)] bg-[color:var(--color-canvas)]/80 backdrop-blur-lg">
+  <div class="container-wide py-4 flex items-center justify-between">
+    {/* ロゴ */}
+    <a
+      href={homeUrl}
+      class="text-base font-semibold tracking-tight hover:text-[color:var(--color-accent)] transition-colors flex items-center gap-2"
+    >
+      <span class="glow-dot hidden sm:block"></span>
+      {lang === 'ja' ? '岡翔子' : 'Shoko Oka'}
+    </a>
+
+    {/* デスクトップ ナビ */}
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a
+        href={aboutUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors"
+      >
+        {t('nav.about')}
+      </a>
+      <a
+        href={booksUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors"
+      >
+        {t('nav.books')}
+      </a>
+      <a
+        href={projectsUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors"
+      >
+        {t('nav.projects')}
+      </a>
+
+      {/* 言語切替 */}
+      <a
+        href={alternateUrl}
+        class="text-[color:var(--color-ink-subtle)] hover:text-[color:var(--color-accent)] transition-colors text-xs uppercase tracking-wider pl-4 border-l border-[color:var(--color-border)]"
+        hreflang={lang === 'ja' ? 'en' : 'ja'}
+      >
+        {lang === 'ja' ? 'EN' : 'JA'}
+      </a>
+
+      {/* ダークモードトグル */}
+      <button
+        id="theme-toggle"
+        type="button"
+        class="p-2 rounded-lg text-[color:var(--color-ink-subtle)] hover:text-[color:var(--color-accent)] hover:bg-[color:var(--color-accent-soft)] transition-all"
+        aria-label="Toggle dark mode"
+      >
+        {/* Sun icon (dark mode active → show sun to switch to light) */}
+        <svg class="theme-icon-light hidden w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        </svg>
+        {/* Moon icon (light mode active → show moon to switch to dark) */}
+        <svg class="theme-icon-dark hidden w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </nav>
+
+    {/* モバイル: トグルボタン群 */}
+    <div class="flex md:hidden items-center gap-2">
+      <a
+        href={alternateUrl}
+        class="text-[color:var(--color-ink-subtle)] hover:text-[color:var(--color-accent)] transition-colors text-xs uppercase tracking-wider p-2"
+        hreflang={lang === 'ja' ? 'en' : 'ja'}
+      >
+        {lang === 'ja' ? 'EN' : 'JA'}
+      </a>
+      <button
+        id="theme-toggle-mobile"
+        type="button"
+        class="p-2 rounded-lg text-[color:var(--color-ink-subtle)] hover:text-[color:var(--color-accent)] transition-colors"
+        aria-label="Toggle dark mode"
+      >
+        <svg class="theme-icon-light hidden w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon-dark hidden w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="p-2 rounded-lg text-[color:var(--color-ink-subtle)] hover:text-[color:var(--color-accent)] transition-colors"
+        aria-label="Open menu"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  {/* モバイルメニュー */}
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[color:var(--color-border)]">
+    <nav class="container-wide py-4 flex flex-col gap-4 text-sm">
+      <a
+        href={aboutUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors py-2"
+      >
+        {t('nav.about')}
+      </a>
+      <a
+        href={booksUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors py-2"
+      >
+        {t('nav.books')}
+      </a>
+      <a
+        href={projectsUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors py-2"
+      >
+        {t('nav.projects')}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function setupThemeToggle() {
+    const isDark = document.documentElement.classList.contains('dark');
+    // アイコン表示の更新
+    document.querySelectorAll('.theme-icon-light').forEach(el => {
+      el.classList.toggle('hidden', !isDark);
+    });
+    document.querySelectorAll('.theme-icon-dark').forEach(el => {
+      el.classList.toggle('hidden', isDark);
+    });
+  }
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    setupThemeToggle();
+  }
+
+  // 初期化
+  setupThemeToggle();
+
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+
+  // モバイルメニュー
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>

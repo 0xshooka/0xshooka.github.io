@@ -1,0 +1,36 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const currentYear = new Date().getFullYear();
+const privacyUrl = lang === 'ja'
+  ? '/legal/selinsa/privacy/'
+  : '/en/legal/selinsa/privacy/';
+---
+
+<footer class="mt-32 border-t border-[color:var(--color-border)]">
+  <div class="container-wide py-10">
+    {/* グロー付きディバイダー */}
+    <div class="h-px mb-10 bg-gradient-to-r from-transparent via-[color:var(--neon-cyan)] to-transparent opacity-30"></div>
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div class="flex items-center gap-3 text-sm text-[color:var(--color-ink-subtle)]">
+        <span class="glow-dot"></span>
+        <span>{t('footer.copyright')} {currentYear}</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-[color:var(--color-ink-subtle)]">
+        <a
+          href={privacyUrl}
+          class="hover:text-[color:var(--color-accent)] transition-colors"
+        >
+          selinsa {t('legal.privacy')}
+        </a>
+        <span class="text-[color:var(--color-border)]">·</span>
+        <span>{t('footer.builtWith')}</span>
+      </div>
+    </div>
+  </div>
+</footer>
