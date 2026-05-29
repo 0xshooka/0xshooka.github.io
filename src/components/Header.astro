@@ -11,8 +11,8 @@ const alternateUrl = getAlternateLangUrl(Astro.url, lang);
 
 const homeUrl = lang === 'ja' ? '/' : '/en/';
 const aboutUrl = lang === 'ja' ? '/about/' : '/en/about/';
-const booksUrl = lang === 'ja' ? '/books/' : '/en/books/';
 const projectsUrl = lang === 'ja' ? '/projects/' : '/en/projects/';
+const contactUrl = lang === 'ja' ? '/contact/' : '/en/contact/';
 ---
 
 <header class="sticky top-0 z-50 border-b border-[color:var(--color-border)] bg-[color:var(--color-canvas)]/80 backdrop-blur-lg">
@@ -23,7 +23,7 @@ const projectsUrl = lang === 'ja' ? '/projects/' : '/en/projects/';
       class="text-base font-semibold tracking-tight hover:text-[color:var(--color-accent)] transition-colors flex items-center gap-2"
     >
       <span class="glow-dot hidden sm:block"></span>
-      {lang === 'ja' ? '岡翔子' : 'Shoko Oka'}
+      {t('site.name')}
     </a>
 
     {/* デスクトップ ナビ */}
@@ -35,16 +35,16 @@ const projectsUrl = lang === 'ja' ? '/projects/' : '/en/projects/';
         {t('nav.about')}
       </a>
       <a
-        href={booksUrl}
-        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors"
-      >
-        {t('nav.books')}
-      </a>
-      <a
         href={projectsUrl}
         class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors"
       >
         {t('nav.projects')}
+      </a>
+      <a
+        href={contactUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors"
+      >
+        {t('nav.contact')}
       </a>
 
       {/* 言語切替 */}
@@ -121,16 +121,16 @@ const projectsUrl = lang === 'ja' ? '/projects/' : '/en/projects/';
         {t('nav.about')}
       </a>
       <a
-        href={booksUrl}
-        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors py-2"
-      >
-        {t('nav.books')}
-      </a>
-      <a
         href={projectsUrl}
         class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors py-2"
       >
         {t('nav.projects')}
+      </a>
+      <a
+        href={contactUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors py-2"
+      >
+        {t('nav.contact')}
       </a>
     </nav>
   </div>

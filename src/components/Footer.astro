@@ -5,9 +5,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const currentYear = new Date().getFullYear();
-const privacyUrl = lang === 'ja'
-  ? '/legal/selinsa/privacy/'
-  : '/en/legal/selinsa/privacy/';
 ---
 
 <footer class="mt-32 border-t border-[color:var(--color-border)]">
@@ -22,13 +19,6 @@ const privacyUrl = lang === 'ja'
       </div>
 
       <div class="flex items-center gap-6 text-xs text-[color:var(--color-ink-subtle)]">
-        <a
-          href={privacyUrl}
-          class="hover:text-[color:var(--color-accent)] transition-colors"
-        >
-          selinsa {t('legal.privacy')}
-        </a>
-        <span class="text-[color:var(--color-border)]">·</span>
         <span>{t('footer.builtWith')}</span>
       </div>
     </div>

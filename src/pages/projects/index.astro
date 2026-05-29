@@ -5,14 +5,10 @@ import { useTranslations } from '../../i18n/utils';
 const t = useTranslations('ja');
 ---
 
-<BaseLayout title={`${t('projects.title')} - 岡翔子`}>
+<BaseLayout title={`${t('projects.title')} - 群青研究所`}>
   <section class="container-wide pt-24 md:pt-32 pb-20">
     <div class="mb-16">
-      <p class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-4 flex items-center gap-2">
-        <span class="glow-dot"></span>
-        {t('projects.title')}
-      </p>
-      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-[color:var(--color-accent)]">
         {t('projects.heading')}
       </h1>
       <p class="text-lg text-[color:var(--color-ink-muted)] max-w-2xl leading-relaxed">
@@ -21,46 +17,68 @@ const t = useTranslations('ja');
     </div>
 
     <div class="grid md:grid-cols-2 gap-6">
+      {/* Promethica */}
+      <div class="card group block">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-semibold tracking-tight">
+            Promethica
+          </h2>
+          <span class="tag">{t('projects.status.mvp')}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
+          {t('projects.promethica.tagline')}
+        </p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
+          {t('projects.promethica.description')}
+        </p>
+      </div>
+
+      {/* Ulucus */}
+      <div class="card group block">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-semibold tracking-tight">
+            Ulucus
+          </h2>
+          <span class="tag">{t('projects.status.experiment')}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
+          {t('projects.ulucus.tagline')}
+        </p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
+          {t('projects.ulucus.description')}
+        </p>
+      </div>
+
+      {/* Pyrer */}
+      <div class="card group block">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-semibold tracking-tight">
+            Pyrer
+          </h2>
+          <span class="tag">{t('projects.status.patent')}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
+          {t('projects.pyrer.tagline')}
+        </p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
+          {t('projects.pyrer.description')}
+        </p>
+      </div>
+
       {/* selinsa */}
       <a href="/projects/selinsa/" class="card group block">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
             selinsa
           </h2>
-          <span class="tag">{t('projects.status.active')}</span>
+          <span class="tag">{t('projects.status.store')}</span>
         </div>
         <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
           {t('projects.selinsa.tagline')}
         </p>
-        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed mb-4">
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
           {t('projects.selinsa.description')}
         </p>
-        <div class="flex gap-2">
-          <span class="tag text-[10px]">iOS</span>
-          <span class="tag text-[10px]">Android</span>
-          <span class="tag text-[10px]">PDF</span>
-        </div>
-      </a>
-
-      {/* Sonde */}
-      <a href="/projects/sonde/" class="card group block">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
-            Sonde
-          </h2>
-          <span class="tag">{t('projects.status.active')}</span>
-        </div>
-        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
-          {t('projects.sonde.tagline')}
-        </p>
-        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed mb-4">
-          {t('projects.sonde.description')}
-        </p>
-        <div class="flex gap-2">
-          <span class="tag text-[10px]">AI</span>
-          <span class="tag text-[10px]">Media</span>
-          <span class="tag text-[10px]">Bilingual</span>
-        </div>
       </a>
     </div>
   </section>

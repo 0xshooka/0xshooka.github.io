@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+const t = useTranslations('en');
+---
+
+<BaseLayout title={`${t('contact.title')} — Cyanos Lab`}>
+  <section class="container-wide pt-24 md:pt-32 pb-20">
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-[color:var(--color-accent)]">
+        {t('contact.heading')}
+      </h1>
+    </div>
+
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSclzac7CbPsRlDDORSzNTpv3_Lq0sbig9P6KwtREfu_jGyCVA/viewform?usp=publish-editor"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="card group block max-w-lg"
+    >
+      <h2 class="text-xl font-semibold tracking-tight mb-3 group-hover:text-[color:var(--color-accent)] transition-colors">
+        {t('contact.form.title')}
+      </h2>
+      <p class="text-sm text-[color:var(--color-ink-muted)]">
+        {t('contact.form.description')}
+      </p>
+    </a>
+  </section>
+</BaseLayout>

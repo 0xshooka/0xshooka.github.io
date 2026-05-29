@@ -13,8 +13,8 @@ const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 
 const defaultDescription = lang === 'ja'
-  ? '岡翔子 - エンジニア・著者の個人サイト。'
-  : 'Shoko Oka - personal site of an engineer and author.';
+  ? '群青研究所 — デジタルの力で医療を前進させる研究組織。'
+  : 'Cyanos Lab — a research organization advancing healthcare through digital technology.';
 const metaDescription = description ?? defaultDescription;
 ---
 

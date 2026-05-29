@@ -19,7 +19,7 @@ handling of personal information of users of the mobile application "selinsa"
 - **Trade Name:** [To be filled / remove if not applicable]
 - **Address:** [Virtual office address - to be filled]
 - **Data Protection Officer:** Shoko Oka
-- **Contact:** [Contact email address - to be filled]
+- **Contact:** Please reach out via our [contact form](/en/contact/)
 
 ## 2. Scope
 
@@ -171,8 +171,8 @@ please contact us at:
 
 - **Operator:** Shoko Oka
 - **Address:** [Virtual office address - to be filled]
-- **Contact email:** [Contact email address - to be filled]
-- **Reception:** Received via email at any time (responses may take approximately 7 business days)
+- **Contact:** Please reach out via our [contact form](/en/contact/)
+- **Reception:** Received via form at any time (responses may take approximately 7 business days)
 
 ## 14. Governing Law
 

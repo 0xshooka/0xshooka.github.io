@@ -5,23 +5,19 @@ import { useTranslations } from '../../i18n/utils';
 const t = useTranslations('en');
 ---
 
-<BaseLayout title="Shoko Oka - Engineer / Author">
+<BaseLayout title="Cyanos Lab — Advancing Healthcare Through Digital Technology">
   {/* Hero */}
   <section class="relative grid-bg">
     <div class="container-wide pt-28 md:pt-40 pb-20 relative z-10">
-      <p class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-6 flex items-center gap-2">
-        <span class="glow-dot"></span>
-        {t('home.tagline')}
-      </p>
-      <h1 class="text-5xl md:text-7xl font-semibold tracking-tight leading-tight mb-8 max-w-3xl">
-        Shoko Oka
+      <h1 class="text-5xl md:text-7xl font-semibold tracking-tight leading-tight mb-8 max-w-3xl text-[color:var(--color-accent)]">
+        Cyanos Lab
       </h1>
       <p class="text-lg text-[color:var(--color-ink-muted)] max-w-2xl leading-relaxed mb-10">
         {t('home.intro')}
       </p>
       <div class="flex flex-wrap gap-4">
-        <a href="/en/projects/" class="btn-primary">{t('home.cta.projects')}</a>
-        <a href="/en/about/" class="btn-outline">{t('home.cta.about')}</a>
+        <a href="/en/about/" class="btn-primary">{t('home.cta.about')}</a>
+        <a href="/en/projects/" class="btn-outline">{t('home.cta.projects')}</a>
       </div>
     </div>
     <div class="absolute top-20 right-10 w-64 h-64 rounded-full bg-[color:var(--neon-cyan)] opacity-[0.03] blur-3xl pointer-events-none"></div>
@@ -38,33 +34,63 @@ const t = useTranslations('en');
     </h2>
 
     <div class="grid md:grid-cols-2 gap-6">
+      <div class="card group block">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold tracking-tight">
+            Promethica
+          </h3>
+          <span class="tag">{t('projects.status.mvp')}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
+          {t('projects.promethica.tagline')}
+        </p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
+          {t('projects.promethica.description')}
+        </p>
+      </div>
+
+      <div class="card group block">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold tracking-tight">
+            Ulucus
+          </h3>
+          <span class="tag">{t('projects.status.experiment')}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
+          {t('projects.ulucus.tagline')}
+        </p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
+          {t('projects.ulucus.description')}
+        </p>
+      </div>
+
+      <div class="card group block">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold tracking-tight">
+            Pyrer
+          </h3>
+          <span class="tag">{t('projects.status.patent')}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
+          {t('projects.pyrer.tagline')}
+        </p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
+          {t('projects.pyrer.description')}
+        </p>
+      </div>
+
       <a href="/en/projects/selinsa/" class="card group block">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
             selinsa
           </h3>
-          <span class="tag">{t('projects.status.active')}</span>
+          <span class="tag">{t('projects.status.store')}</span>
         </div>
         <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
           {t('projects.selinsa.tagline')}
         </p>
         <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
           {t('projects.selinsa.description')}
-        </p>
-      </a>
-
-      <a href="/en/projects/sonde/" class="card group block">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
-            Sonde
-          </h3>
-          <span class="tag">{t('projects.status.active')}</span>
-        </div>
-        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
-          {t('projects.sonde.tagline')}
-        </p>
-        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
-          {t('projects.sonde.description')}
         </p>
       </a>
     </div>

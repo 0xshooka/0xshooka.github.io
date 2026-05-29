@@ -4,23 +4,19 @@ import { useTranslations } from '../../i18n/utils';
 
 const t = useTranslations('ja');
 
-const interests = [
-  t('about.interests.1'),
-  t('about.interests.2'),
-  t('about.interests.3'),
-  t('about.interests.4'),
+const focusAreas = [
+  t('about.focus.1'),
+  t('about.focus.2'),
+  t('about.focus.3'),
+  t('about.focus.4'),
 ];
 ---
 
-<BaseLayout title={`${t('about.title')} - 岡翔子`}>
+<BaseLayout title={`${t('about.title')} - 群青研究所`}>
   <section class="container-wide pt-24 md:pt-32 pb-20">
     {/* ヘッダー */}
     <div class="mb-16">
-      <p class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-4 flex items-center gap-2">
-        <span class="glow-dot"></span>
-        {t('about.title')}
-      </p>
-      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-[color:var(--color-accent)]">
         {t('about.heading')}
       </h1>
       <p class="text-lg text-[color:var(--color-ink-muted)] max-w-2xl leading-relaxed">
@@ -28,15 +24,15 @@ const interests = [
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12">
-      {/* 関心領域 */}
+    {/* 活動領域 */}
+    <div class="mb-16">
       <div class="card">
         <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-6 flex items-center gap-2">
           <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
-          {t('about.interests.title')}
+          {t('about.focus.title')}
         </h2>
-        <ul class="space-y-3">
-          {interests.map((item) => (
+        <ul class="grid md:grid-cols-2 gap-3">
+          {focusAreas.map((item) => (
             <li class="flex items-start gap-3 text-[color:var(--color-ink-muted)]">
               <span class="glow-dot mt-2 shrink-0"></span>
               <span>{item}</span>
@@ -44,36 +40,42 @@ const interests = [
           ))}
         </ul>
       </div>
-
-      {/* キャリア */}
-      <div class="card">
-        <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-6 flex items-center gap-2">
-          <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
-          {t('about.career.title')}
-        </h2>
-        <div class="flex items-start gap-3">
-          <div class="w-2 h-2 rounded-full bg-[color:var(--neon-cyan)] mt-2 shrink-0 shadow-[0_0_8px_var(--color-glow-strong)]"></div>
-          <div>
-            <p class="font-medium">{t('about.career.current')}</p>
-            <p class="text-sm text-[color:var(--color-ink-subtle)] mt-1">現在</p>
-          </div>
-        </div>
-      </div>
     </div>
 
-    {/* リンク */}
-    <div class="mt-12">
-      <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-ink-subtle)] mb-6 flex items-center gap-3">
+    {/* メンバー */}
+    <div class="mb-16">
+      <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-ink-subtle)] mb-10 flex items-center gap-3">
         <span class="w-8 h-px bg-[color:var(--color-accent)]"></span>
-        {t('about.links.title')}
+        {t('about.members.title')}
       </h2>
-      <div class="flex flex-wrap gap-3">
-        <a href="https://github.com/okashoko" target="_blank" rel="noopener noreferrer" class="tag hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]">
-          GitHub
-        </a>
-        <a href="https://x.com/okashoko" target="_blank" rel="noopener noreferrer" class="tag hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]">
-          X (Twitter)
-        </a>
+
+      <div class="card">
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+          <div class="shrink-0">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[color:var(--neon-cyan)] to-[color:var(--neon-magenta)] opacity-80 flex items-center justify-center text-white text-xl font-semibold">
+              S
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold tracking-tight mb-1">
+              {t('about.members.shoko.name')}
+            </h3>
+            <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-4">
+              {t('about.members.shoko.role')}
+            </p>
+            <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed mb-4">
+              {t('about.members.shoko.bio')}
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://github.com/0xshooka" target="_blank" rel="noopener noreferrer" class="tag hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]">
+                GitHub
+              </a>
+              <a href="https://x.com/0xshooka" target="_blank" rel="noopener noreferrer" class="tag hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]">
+                X (Twitter)
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
