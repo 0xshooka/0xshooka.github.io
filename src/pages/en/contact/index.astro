@@ -11,20 +11,24 @@ const t = useTranslations('en');
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-[color:var(--color-accent)]">
         {t('contact.heading')}
       </h1>
+      <p class="text-lg text-[color:var(--color-ink-muted)] max-w-2xl leading-relaxed">
+        {t('contact.description')}
+      </p>
     </div>
 
-    <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSclzac7CbPsRlDDORSzNTpv3_Lq0sbig9P6KwtREfu_jGyCVA/viewform?usp=publish-editor"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="card group block max-w-lg"
-    >
-      <h2 class="text-xl font-semibold tracking-tight mb-3 group-hover:text-[color:var(--color-accent)] transition-colors">
-        {t('contact.form.title')}
-      </h2>
-      <p class="text-sm text-[color:var(--color-ink-muted)]">
-        {t('contact.form.description')}
-      </p>
-    </a>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="https://www.linkedin.com/in/shoko-oka-71a648167/" target="_blank" rel="noopener noreferrer" class="card group block">
+        <h2 class="text-xl font-semibold tracking-tight mb-3 group-hover:text-[color:var(--color-accent)] transition-colors">LinkedIn</h2>
+        <p class="text-sm text-[color:var(--color-ink-muted)]">Professional and research inquiries</p>
+      </a>
+      <a href="https://x.com/0xshooka" target="_blank" rel="noopener noreferrer" class="card group block">
+        <h2 class="text-xl font-semibold tracking-tight mb-3 group-hover:text-[color:var(--color-accent)] transition-colors">X</h2>
+        <p class="text-sm text-[color:var(--color-ink-muted)]">@0xshooka</p>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSclzac7CbPsRlDDORSzNTpv3_Lq0sbig9P6KwtREfu_jGyCVA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="card group block">
+        <h2 class="text-xl font-semibold tracking-tight mb-3 group-hover:text-[color:var(--color-accent)] transition-colors">{t('contact.form.title')}</h2>
+        <p class="text-sm text-[color:var(--color-ink-muted)]">{t('contact.form.description')}</p>
+      </a>
+    </div>
   </section>
 </BaseLayout>

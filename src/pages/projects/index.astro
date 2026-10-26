@@ -18,9 +18,9 @@ const t = useTranslations('ja');
 
     <div class="grid md:grid-cols-2 gap-6">
       {/* Promethica */}
-      <div class="card group block">
+      <a href="/projects/promethica/" class="card group block">
         <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-semibold tracking-tight">
+          <h2 class="text-2xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
             Promethica
           </h2>
           <span class="tag">{t('projects.status.mvp')}</span>
@@ -31,39 +31,7 @@ const t = useTranslations('ja');
         <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
           {t('projects.promethica.description')}
         </p>
-      </div>
-
-      {/* Ulucus */}
-      <div class="card group block">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-semibold tracking-tight">
-            Ulucus
-          </h2>
-          <span class="tag">{t('projects.status.experiment')}</span>
-        </div>
-        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
-          {t('projects.ulucus.tagline')}
-        </p>
-        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
-          {t('projects.ulucus.description')}
-        </p>
-      </div>
-
-      {/* Pyrer */}
-      <div class="card group block">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-semibold tracking-tight">
-            Pyrer
-          </h2>
-          <span class="tag">{t('projects.status.patent')}</span>
-        </div>
-        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
-          {t('projects.pyrer.tagline')}
-        </p>
-        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
-          {t('projects.pyrer.description')}
-        </p>
-      </div>
+      </a>
 
       {/* selinsa */}
       <a href="/projects/selinsa/" class="card group block">
@@ -78,6 +46,22 @@ const t = useTranslations('ja');
         </p>
         <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
           {t('projects.selinsa.description')}
+        </p>
+      </a>
+
+      {/* Sonde */}
+      <a href="/projects/sonde/" class="card group block">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
+            Sonde
+          </h2>
+          <span class="tag">{t('projects.status.building')}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
+          {t('projects.sonde.tagline')}
+        </p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
+          {t('projects.sonde.description')}
         </p>
       </a>
     </div>

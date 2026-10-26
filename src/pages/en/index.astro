@@ -5,7 +5,7 @@ import { useTranslations } from '../../i18n/utils';
 const t = useTranslations('en');
 ---
 
-<BaseLayout title="Cyanos Lab — Advancing Healthcare Through Digital Technology">
+<BaseLayout title="Cyanos Lab — AI & Life Science">
   {/* Hero */}
   <section class="relative grid-bg">
     <div class="container-wide pt-28 md:pt-40 pb-20 relative z-10">
@@ -34,9 +34,9 @@ const t = useTranslations('en');
     </h2>
 
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="card group block">
+      <a href="/en/projects/promethica/" class="card group block">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-semibold tracking-tight">
+          <h3 class="text-xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
             Promethica
           </h3>
           <span class="tag">{t('projects.status.mvp')}</span>
@@ -47,37 +47,7 @@ const t = useTranslations('en');
         <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
           {t('projects.promethica.description')}
         </p>
-      </div>
-
-      <div class="card group block">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-semibold tracking-tight">
-            Ulucus
-          </h3>
-          <span class="tag">{t('projects.status.experiment')}</span>
-        </div>
-        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
-          {t('projects.ulucus.tagline')}
-        </p>
-        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
-          {t('projects.ulucus.description')}
-        </p>
-      </div>
-
-      <div class="card group block">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-semibold tracking-tight">
-            Pyrer
-          </h3>
-          <span class="tag">{t('projects.status.patent')}</span>
-        </div>
-        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
-          {t('projects.pyrer.tagline')}
-        </p>
-        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
-          {t('projects.pyrer.description')}
-        </p>
-      </div>
+      </a>
 
       <a href="/en/projects/selinsa/" class="card group block">
         <div class="flex items-center justify-between mb-4">
@@ -92,6 +62,51 @@ const t = useTranslations('en');
         <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
           {t('projects.selinsa.description')}
         </p>
+      </a>
+
+      <a href="/en/projects/sonde/" class="card group block">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors">
+            Sonde
+          </h3>
+          <span class="tag">{t('projects.status.building')}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-3">
+          {t('projects.sonde.tagline')}
+        </p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">
+          {t('projects.sonde.description')}
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="container-wide py-20">
+    <div class="flex items-end justify-between gap-6 mb-10">
+      <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-ink-subtle)] flex items-center gap-3">
+        <span class="w-8 h-px bg-[color:var(--color-accent)]"></span>
+        {t('home.section.books')}
+      </h2>
+      <a href="/en/books/" class="text-sm text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors">
+        {t('home.cta.books')} →
+      </a>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="https://gihyo.jp/book/2025/978-4-297-15327-4" target="_blank" rel="noopener noreferrer" class="card group block">
+        <span class="tag mb-4">{t('books.book.label')}</span>
+        <h3 class="text-xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors mb-3">
+          The Complete Guide to MCP Server Development
+        </h3>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">{t('books.book.description')}</p>
+      </a>
+      <a href="https://arxiv.org/abs/2506.07896" target="_blank" rel="noopener noreferrer" class="card group block">
+        <span class="tag mb-4">{t('books.paper.label')}</span>
+        <h3 class="text-lg font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors mb-3 leading-snug">
+          Evaluating Large Language Models on the Frame and Symbol Grounding Problems
+        </h3>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">{t('books.paper.description')}</p>
       </a>
     </div>
   </section>

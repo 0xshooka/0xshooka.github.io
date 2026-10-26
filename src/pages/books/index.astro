@@ -5,7 +5,7 @@ import { useTranslations } from '../../i18n/utils';
 const t = useTranslations('ja');
 ---
 
-<BaseLayout title={`${t('books.title')} - 岡翔子`}>
+<BaseLayout title={`${t('books.title')} - 群青研究所`}>
   <section class="container-wide pt-24 md:pt-32 pb-20">
     <div class="mb-16">
       <p class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-4 flex items-center gap-2">
@@ -20,14 +20,26 @@ const t = useTranslations('ja');
       </p>
     </div>
 
-    {/* 書籍リスト — 内容が決まり次第追加 */}
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="card flex flex-col justify-center items-center py-16 text-center">
-        <div class="text-4xl mb-4 opacity-20">📖</div>
-        <p class="text-[color:var(--color-ink-subtle)] text-sm">
-          準備中 — 情報が公開され次第、ここに掲載されます。
-        </p>
-      </div>
+      <a href="https://gihyo.jp/book/2025/978-4-297-15327-4" target="_blank" rel="noopener noreferrer" class="card group block">
+        <div class="flex items-center justify-between gap-4 mb-4">
+          <span class="tag">{t('books.book.label')}</span>
+          <span class="text-xs text-[color:var(--color-ink-subtle)]">2025.11.25</span>
+        </div>
+        <h2 class="text-2xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors mb-2">MCPサーバー開発大全</h2>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-4">岡翔子 著 · 高山洪銘、餌打優太 監修 · 技術評論社</p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">{t('books.book.description')}</p>
+      </a>
+
+      <a href="https://arxiv.org/abs/2506.07896" target="_blank" rel="noopener noreferrer" class="card group block">
+        <div class="flex items-center justify-between gap-4 mb-4">
+          <span class="tag">{t('books.paper.label')}</span>
+          <span class="text-xs text-[color:var(--color-ink-subtle)]">arXiv:2506.07896</span>
+        </div>
+        <h2 class="text-xl font-semibold tracking-tight group-hover:text-[color:var(--color-accent)] transition-colors mb-2 leading-snug">Evaluating Large Language Models on the Frame and Symbol Grounding Problems: A Zero-shot Benchmark</h2>
+        <p class="text-xs uppercase tracking-wider text-[color:var(--color-accent)] mb-4">Shoko Oka · 2025</p>
+        <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">{t('books.paper.description')}</p>
+      </a>
     </div>
   </section>
 </BaseLayout>

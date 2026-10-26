@@ -13,8 +13,8 @@ const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 
 const defaultDescription = lang === 'ja'
-  ? '群青研究所 — デジタルの力で医療を前進させる研究組織。'
-  : 'Cyanos Lab — a research organization advancing healthcare through digital technology.';
+  ? '群青研究所 — AIをはじめとするテクノロジーを通じて、ライフサイエンスに貢献する研究・開発活動。'
+  : 'Cyanos Lab — contributing to life science through AI and other technologies.';
 const metaDescription = description ?? defaultDescription;
 ---
 

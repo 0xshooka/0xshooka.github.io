@@ -12,6 +12,7 @@ const alternateUrl = getAlternateLangUrl(Astro.url, lang);
 const homeUrl = lang === 'ja' ? '/' : '/en/';
 const aboutUrl = lang === 'ja' ? '/about/' : '/en/about/';
 const projectsUrl = lang === 'ja' ? '/projects/' : '/en/projects/';
+const publicationsUrl = lang === 'ja' ? '/books/' : '/en/books/';
 const contactUrl = lang === 'ja' ? '/contact/' : '/en/contact/';
 ---
 
@@ -39,6 +40,12 @@ const contactUrl = lang === 'ja' ? '/contact/' : '/en/contact/';
         class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors"
       >
         {t('nav.projects')}
+      </a>
+      <a
+        href={publicationsUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors"
+      >
+        {t('nav.publications')}
       </a>
       <a
         href={contactUrl}
@@ -125,6 +132,12 @@ const contactUrl = lang === 'ja' ? '/contact/' : '/en/contact/';
         class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors py-2"
       >
         {t('nav.projects')}
+      </a>
+      <a
+        href={publicationsUrl}
+        class="text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-accent)] transition-colors py-2"
+      >
+        {t('nav.publications')}
       </a>
       <a
         href={contactUrl}

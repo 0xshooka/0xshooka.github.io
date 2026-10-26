@@ -1,6 +1,6 @@
-# okashoko website
+# Cyanos Lab website
 
-0xshookaの個人サイト。ハブ用途の静的サイトで、Astro 5 + Tailwind 4 + GitHub Pages で構築。
+群青研究所（Cyanos Lab）の公式サイト。AIをはじめとするテクノロジーとライフサイエンスに関する研究・開発活動のハブとして、Astro 6 + Tailwind 4 + GitHub Pages で構築。
 
 ## 設計方針
 
@@ -11,7 +11,7 @@
 
 ## 技術スタック
 
-- [Astro 5](https://astro.build/) — 静的サイトジェネレーター
+- [Astro 6](https://astro.build/) — 静的サイトジェネレーター
 - [Tailwind 4](https://tailwindcss.com/) — CSS-first 設定
 - [Satoshi](https://www.fontshare.com/fonts/satoshi) (Fontshare) — display + body 兼用の幾何学的サンセリフ
 - [Zen Kaku Gothic New](https://fonts.google.com/specimen/Zen+Kaku+Gothic+New) (Google Fonts) — 日本語
@@ -64,7 +64,10 @@ selinsa-website/
 | トップ | `/` | `/en/` |
 | selinsa プライバシー | `/legal/selinsa/privacy/` | `/en/legal/selinsa/privacy/` |
 | プロジェクト一覧 | `/projects/` | `/en/projects/` |
-| 著書 | `/books/` | `/en/books/` |
+| 出版・研究 | `/books/` | `/en/books/` |
+| Promethica | `/projects/promethica/` | `/en/projects/promethica/` |
+| selinsa | `/projects/selinsa/` | `/en/projects/selinsa/` |
+| Sonde | `/projects/sonde/` | `/en/projects/sonde/` |
 
 ## ページを追加する手順
 
@@ -126,15 +129,6 @@ Cloudflare 側で A レコード (`185.199.108.153`, `185.199.109.153`, `185.199
   /* ... */
 }
 ```
-
-## 今後追加していくページ案
-
-- `/about/` — 詳細プロフィール
-- `/books/` — 著書一覧 (まずは『MCPサーバー開発大全』)
-- `/projects/selinsa/` — selinsa の詳細紹介
-- `/projects/sonde/` — Sonde の紹介
-- `/papers/` — 論文一覧 (将来)
-- `/contact/` — 連絡先
 
 ## 注意事項 (公開前チェックリスト)
 

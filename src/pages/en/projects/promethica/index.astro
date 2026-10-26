@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../../i18n/utils';
+
+const t = useTranslations('en');
+
+const features = [
+  t('projects.promethica.features.1'),
+  t('projects.promethica.features.2'),
+  t('projects.promethica.features.3'),
+  t('projects.promethica.features.4'),
+];
+---
+
+<BaseLayout title="Promethica - Cyanos Lab" description={t('projects.promethica.description')}>
+  <section class="container-wide pt-24 md:pt-32 pb-20">
+    <div class="mb-16">
+      <a href="/en/projects/" class="text-sm text-[color:var(--color-ink-subtle)] hover:text-[color:var(--color-accent)] transition-colors mb-6 inline-block">
+        ← {t('projects.title')}
+      </a>
+      <div class="flex flex-wrap items-center gap-4 mb-4">
+        <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">Promethica</h1>
+        <span class="tag">{t('projects.status.mvp')}</span>
+      </div>
+      <p class="text-sm uppercase tracking-wider text-[color:var(--color-accent)] mb-6">{t('projects.promethica.tagline')}</p>
+      <p class="text-lg text-[color:var(--color-ink-muted)] max-w-3xl leading-relaxed">{t('projects.promethica.detail')}</p>
+    </div>
+
+    <hr class="divider mb-12" />
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="card">
+        <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-6 flex items-center gap-2">
+          <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
+          {t('projects.promethica.features.title')}
+        </h2>
+        <ul class="space-y-3">
+          {features.map((item) => (
+            <li class="flex items-start gap-3 text-[color:var(--color-ink-muted)]">
+              <span class="glow-dot mt-2 shrink-0"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="space-y-8">
+        <div class="card">
+          <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-6 flex items-center gap-2">
+            <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
+            {t('projects.status')}
+          </h2>
+          <p class="text-[color:var(--color-ink-muted)] mb-5">v0.1.0 / Early development release, under active development</p>
+          <a href="https://github.com/0xshooka/promethica/" target="_blank" rel="noopener noreferrer" class="btn-outline">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h2 class="text-sm uppercase tracking-widest text-[color:var(--color-accent)] mb-6 flex items-center gap-2">
+            <span class="w-6 h-px bg-[color:var(--color-accent)]"></span>
+            {t('projects.promethica.roadmap.title')}
+          </h2>
+          <p class="text-sm text-[color:var(--color-ink-muted)] leading-relaxed">{t('projects.promethica.roadmap')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
